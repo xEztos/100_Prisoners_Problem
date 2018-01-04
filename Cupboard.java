@@ -8,7 +8,7 @@ public class Cupboard{
 		container = new int[cupboard_size];
 
 		for(int i = 0; i < container.length; i++){
-			container[i] = (int)(Math.random()*cupboard_size);
+			//impliment a way where the cupboard is populated with numbers 0 to cupboard_size with each number appearing only once
 		}
 	}
 
