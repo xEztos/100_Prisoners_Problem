@@ -12,7 +12,7 @@ public class Prisoner_Execution{
 		for(int i = 0; i < prisoner_number && successful; i++){
 			int nextNumber = prisoner_cupboard.peek(i);
 			// this will check "51" times, but the 51st time will be the prisoner picking the box the 50th box told him to without peeking
-			for(int j = 50; j > 0; j--){
+			for(int j = 0; j < 50; j++){
 				if(nextNumber != i){
 					nextNumber = prisoner_cupboard.peek(nextNumber);
 				}
