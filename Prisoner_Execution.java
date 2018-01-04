@@ -6,7 +6,7 @@ public class Prisoner_Execution{
 
 	public Prisoner_Execution(int prisoner_number){
 		prisoner_cupboard = new Cupboard(prisoner_number);
-		System.out.println(prisoner_cupboard);
+		// System.out.println(prisoner_cupboard);
 		successful = true;
 		prisoner_failed = -1;
 		number_prisoners = prisoner_number;
