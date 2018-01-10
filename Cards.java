@@ -20,7 +20,10 @@ public class Cards{
 		double amount = Math.random() * 100;
 		for(int i = 0; i < amount; i++){
 			cut();
-			if(Math.random()*2 > 1){
+			double random = Math.random() * 3;
+			if(random > 2){
+				overhand();
+			}else if(random> 1){
 				perfect_in_riffle();
 			} else{
 				perfect_out_riffle();
@@ -56,6 +59,41 @@ public class Cards{
 			else{
 				temp[(int)(2*(i - Math.round(temp.length/2.0))+1)] = cardStack[i];
 			}
+		}
+
+		cardStack = temp;
+	}
+
+	private void overhand(){
+		int[] temp = new int[cardStack.length];
+		int tempA = (int)(Math.random()*cardStack.length);
+		int tempB = (int)(Math.random()*cardStack.length);
+		
+		if(tempB < tempA){ // swap tempA and tempB if tempB < tempA
+			int tempC = tempA;
+			tempA = tempB;
+			tempB = tempC;
+		}
+
+		int tempC = 0;
+		for(int i = tempA; i < tempB; i++){
+			temp[tempC++] = cardStack[i];
+		}
+		for(int i = 0; i < tempA; i++){
+			temp[tempC++] = cardStack[i];
+		}
+		for(int i = tempB; i < cardStack.length; i++){
+			temp[tempC++] = cardStack[i];
+		}
+	}
+
+
+	public void fisherYatesShuffle(){
+		int[] temp = new int[cardStack.length];
+		for(int i = 0; i < temp.length; i++){
+			int random = (int)(Math.random()*(temp.length - i));
+			temp[i] = cardStack[random];
+			cardStack[random] = cardStack[cardStack.length-i-1];
 		}
 
 		cardStack = temp;
