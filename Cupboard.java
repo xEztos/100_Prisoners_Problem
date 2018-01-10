@@ -7,7 +7,8 @@ public class Cupboard{
 	public Cupboard(int cupboard_size){
 		container = new int[cupboard_size];
 		Cards temp = new Cards(cupboard_size);
-		temp.shuffle();
+		// temp.shuffle();
+		temp.fisherYatesShuffle();
 		for(int i = 0; i < container.length; i++){
 			//impliment a way where the cupboard is populated with numbers 0 to cupboard_size with each number appearing only once
 			container[i] = temp.pop();
